@@ -1,11 +1,12 @@
 import React from 'react';
-import { array } from 'prop-types';
+import { array, object } from 'prop-types';
+import { withRouter } from 'react-router';
 import { StyledDiv, StyledCard } from './style';
 
-const ArtistsList = ({ artists }) => (
+const ArtistsList = ({ artists, history }) => (
   <StyledDiv>
     {artists.map(artist => (
-      <StyledCard>
+      <StyledCard onClick={() => history.push(`/artist/${artist.id}`)} key={artist.id}>
         <img src={artist.imageUrl} alt="artist" id="imageUrl" />
         <div id="artist-details">
           <span id="name">{artist.name}</span>
@@ -18,6 +19,7 @@ const ArtistsList = ({ artists }) => (
 
 ArtistsList.propTypes = {
   artists: array.isRequired,
+  history: object.isRequired,
 };
 
-export default ArtistsList;
+export default withRouter(ArtistsList);

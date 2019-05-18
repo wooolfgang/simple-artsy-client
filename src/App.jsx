@@ -5,6 +5,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import GlobalStyle, { theme } from './theme/globalStyle';
 import Feed from './pages/Feed';
+import Artist from './pages/Artist';
 
 const client = new ApolloClient({
   uri: 'https://metaphysics-staging.artsy.net/',
@@ -18,6 +19,7 @@ function App() {
           <>
             <GlobalStyle />
             <Route exact path="/" component={Feed} />
+            <Route path="/artist/:id" component={Artist} />
           </>
         </Router>
       </ThemeProvider>
