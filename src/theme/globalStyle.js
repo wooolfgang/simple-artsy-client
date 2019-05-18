@@ -5,7 +5,7 @@ export const theme = {
     c1: '#011627',
     c2: '#FF0022',
     c3: '#41EAD4',
-    c4: '#FDFFFC',
+    c4: '#fafafa',
     c5: '#B91372',
   },
 };
